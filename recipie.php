@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
 <?php 
 class Recipie
 {
@@ -55,5 +64,12 @@ class Recipie
 $recipie1 = new Recipie();
 $recipie1->source = "Jonas Carboo";
 $recipie1->addIngredient("Ägg");
+?>
+<p><?php echo $recipie1->displayRecipie(); ?></p>
 
-echo $recipie1->displayRecipie();
+
+
+
+</body>
+</html>
+
