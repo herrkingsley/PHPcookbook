@@ -20,6 +20,7 @@ class Recipie
         "ml",
         "cl",
         "dl",
+        "l",
         "st"  
     );
 
