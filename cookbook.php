@@ -3,14 +3,21 @@
     
     //classes
     include("classes/recipes.class.php");
+    include("classes/recipecollection.class.php");
     include("classes/render.class.php");
     include("inc/allrecipes.inc.php");
 ?>
 
 
 <?php 
+$cookbook = new Recipecollection("myCollection");
+$cookbook->addRecipes($majssoppa);
+$cookbook->addRecipes($kottfars);
+$cookbook->addRecipes($gpGryta);
+
+echo Render::listRecipes($cookbook->getRecepieTitles());
 //Static method to render the recipe
-echo Render::displayRecipie($majssoppa);
+// echo Render::displayRecipie($majssoppa);
 
 ?>
 
