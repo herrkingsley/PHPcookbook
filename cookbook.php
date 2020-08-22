@@ -2,6 +2,7 @@
     include("inc/header.inc.php");
     //classes
     include("classes/recipes.class.php");
+    include("classes/render.class.php");
 ?>
 
 <?php 
@@ -29,22 +30,10 @@ $recipie1->addTag("Matlåda");
 
 ?>
 
-<p><?php 
-    echo $recipie1->getTitle() . "<br>"; 
-    echo $recipie1->getSource() . "<br>"; 
-    echo $recipie1->getYield() . "<br>"; 
-    foreach($recipie1->getIngredients() as $ing) { 
-        echo "<br> {$ing["amount"]} {$ing["measure"]} {$ing["item"]}";
-    }
-    echo "<br>";
-    foreach($recipie1->getInstruction() as $key => $inst) { 
-        ++$key;
-        echo "<br> {$key}: {$inst}";
-    }
-    echo "<br><br>  Tags<br> " . implode(", ", $recipie1->getTags());
+<?php 
+//Static method to render the recipe
+echo Render::displayRecipie($recipie1);
 
-
-?></p>
-
+?>
 
 <?php include("inc/footer.inc.php"); ?>

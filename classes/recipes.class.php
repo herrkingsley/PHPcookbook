@@ -93,9 +93,7 @@ class Recipie
         return $this->source;
     }
 
-    public function displayRecipie() {
-        return "{$this->title} av {$this->source} <br>";
-    }
+
 }
 
 
