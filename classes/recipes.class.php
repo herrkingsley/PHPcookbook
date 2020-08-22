@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-<body>
 <?php 
 class Recipie
 {
-    private $title;
+    
     public $ingredients = array();
     public $instructions = array();
-    public $yield;
     public $tag = array();
+    public $yield;
     public $source = "Jonas Carboo";
 
+    private $title;
     private $measurements = array(
         "kryddmått",
         "tsk",
@@ -56,20 +48,18 @@ class Recipie
   
     }
 
+    public function getIngredients(){
+        return $this->ingredients;
+    }
+
     public function displayRecipie() {
         return "{$this->title} av {$this->source}";
     }
 }
 
-$recipie1 = new Recipie();
-$recipie1->source = "Jonas Carboo";
-$recipie1->addIngredient("Ägg");
+
 ?>
-<p><?php echo $recipie1->displayRecipie(); ?></p>
 
 
 
-
-</body>
-</html>
 
