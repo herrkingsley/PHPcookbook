@@ -51,10 +51,12 @@ class Recipecollection
 
    public function filterByTag($tag) {
         $taggedRecipes = array();
-        foreach(){
-            
+        foreach($this->recipes as $recipe){
+            if(in_array(strtolower($tag), $recipe->getTags())){
+                $taggedRecipes[] = $recipe;
+            }
         }
-
+        return $taggedRecipes;
    }
 
 }

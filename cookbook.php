@@ -15,7 +15,12 @@ $cookbook->addRecipes($majssoppa);
 $cookbook->addRecipes($kottfars);
 $cookbook->addRecipes($gpGryta);
 
-echo Render::listRecipes($cookbook->getRecepieTitles());
+$filter = new Recipecollection("myFilter");
+foreach ($cookbook->filterByTag("matlåda") as $recipe) {
+    $filter->addRecipes($recipe);
+}
+echo "Mat med matlåda som tag: <br>" . Render::listRecipes($filter->getRecepieTitles());
+// echo Render::listRecipes($cookbook->getRecepieTitles());
 //Static method to render the recipe
 // echo Render::displayRecipie($majssoppa);
 
